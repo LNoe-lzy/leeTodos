@@ -1,0 +1,20 @@
+<%- include header.ejs %>
+<div class="content-scrollable">
+    <div class="wrapper-auth">
+        <h1 class="title-auth">Sign In.</h1>
+        <p class="subtitle-auth">Signing in allows you to view private lists</p>
+        <form method="post">
+            <div class="input-symbol">
+                <input type="email" name="email" placeholder="Your Email">
+                <span class="icon-email" title="Your Email"></span>
+            </div>
+            <div class="input-symbol">
+                <input type="password" name="password" placeholder="Password">
+                <span class="icon-lock" title="Password"></span>
+            </div>
+            <button type="submit" class="btn-primary">Sign in</button>
+        </form>
+    </div>
+    <a href="/join" class="link-auth-alt">Need an account? Join Now.</a>
+</div>
+<%- include footer.ejs %>

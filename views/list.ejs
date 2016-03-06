@@ -1,0 +1,15 @@
+<%- include header.ejs %>
+<div class="page-items">
+    <h1 class="page-items-title"><%= taskName.taskName %></h1>
+    <form class="add-new" method="post">
+        <input type="text" name="listname" placeholder="Type to add new tasks">
+        <button type="submit"> + </button>
+    </form>
+</div>
+<% tasklist.forEach(function(tasklist, index){ %>
+<div class="list-item">
+    <div class="list-item-con"><%= tasklist.listname %></div>
+    <a class="js-delete-item delete-item" href="#"><span class="icon-trash"></span></a>
+</div>
+<% }) %>
+<%- include footer.ejs %>

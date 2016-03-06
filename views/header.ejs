@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<% if (success) { %>
+<div class="alert alert-success"><%= success %></div>
+<% } %>
+<% if (error) { %>
+<div class="alert alert-error"><%= error %></div>
+<% } %>
+<div class="container">
+    <section class="menu">
+        <div class="btn-groups">
+            <% if (user) { %>
+            <a href="/" class="js-user-menu"><%= user.email %></a>
+            <a href="/logout" class="js-user-menu">lagout</a>
+            <% } else { %>
+            <a href="/signin" class="btn-secondary">sign in</a>
+            <a href="/join" class="btn-secondary join">join</a>
+            <% } %>
+        </div>
+        <div class="list-todos">
+            <% if (user) { %>
+            <a href="/newlist" class="new-list">+ New List</a>
+            <% } %>
+            <a href="/newlist" class="todos">Todo test</a>
+            <% tasks.forEach(function(task, index){ %>
+            <a href="/u/<%= task.email %>/<%= task.taskName %>" class="todos"><%= task.taskName %></a>
+            <% }) %>
+        </div>
+    </section>
+    <div class="content-container">
+        <div class="page">
